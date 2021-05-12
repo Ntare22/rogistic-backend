@@ -4,6 +4,11 @@ node_js:
 notifications:
   email: false
 
+env:
+  global:
+  # Code Climate Reporter gotten from code climate
+    - CC_TEST_REPORTER_ID=5452c724dcf8b4dfa41af264941feb2afdbd01e965e5ce66b413fbef9b4fbe72
+
 before_install:
   - npm install sequelize-cli -g
 
@@ -17,13 +22,23 @@ env:
   global:
     -NODE_ENV=test
 
-# before_script:
+before_script:
+    - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+    - chmod +x ./cc-test-reporter
+    - ./cc-test-reporter before-build
 #   - npm add sequelize-cli
 #   - psql -c 'create database rogistic_test_db;' -U postgres
+
+after_script:  
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
 
 script:
   - npm test
 
 after_success: 
   - npm run coverage
+  - npm run coveralls
+
+notifications:
+  email: false
   

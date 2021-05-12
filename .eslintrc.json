@@ -9,7 +9,7 @@
         "sourceType": "module"
     },
     "rules": {
-        "no-console": "on",
+        "no-console": "off",
         "no-restricted-syntax": [
             "error",
             {

@@ -4,10 +4,12 @@
   "description": "rogistic is an Inventory Management System for various SME's. Mainly used by managers to track the production line, and sales.",
   "main": "index.js",
   "scripts": {
+    "start": "babel-node ./src/index.js",
     "dev": "babel-watch ./src/index.js",
     "test": "npm run test:unit",
     "test:unit": "nyc --require @babel/register mocha --recursive './src/**/*.test.js' --env test --timeout 2000 --exit",
-    "coverage": "nyc report --reporter=text-lcov | coveralls"
+    "coveralls": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls",
+    "coverage": "nyc report --reporter=text-lcov | coveralls && nyc report --reporter=lcov"
   },
   "repository": {
     "type": "git",
