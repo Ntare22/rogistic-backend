@@ -1,0 +1,29 @@
+langauge: node_js
+node_js:
+  - "stable"
+notifications:
+  email: false
+
+before_install:
+  - npm install sequelize-cli -g
+
+install:
+  - npm install
+
+services:
+  - postgresql
+
+env:
+  global:
+    -NODE_ENV=test
+
+# before_script:
+#   - npm add sequelize-cli
+#   - psql -c 'create database rogistic_test_db;' -U postgres
+
+script:
+  - npm test
+
+after_success: 
+  - npm run coverage
+  
