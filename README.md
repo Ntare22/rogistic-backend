@@ -1,6 +1,9 @@
 ```bash
 ### rogistic backend api
 ```
+[![CircleCI](https://circleci.com/gh/Ntare22/rogistic-backend.svg?style=svg)](https://app.circleci.com/pipelines/github/Ntare22/rogistic-backend)
+[![Maintainability](https://api.codeclimate.com/v1/badges/6922ab48bdec948f9ea7/maintainability)](https://codeclimate.com/github/Ntare22/rogistic-backend/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/6922ab48bdec948f9ea7/test_coverage)](https://codeclimate.com/github/Ntare22/rogistic-backend/test_coverage)
 
 ## Description
 
