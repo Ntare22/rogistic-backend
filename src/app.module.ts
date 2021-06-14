@@ -3,6 +3,7 @@ import { HomeModule } from './home/home.module';
 
 @Module({
   imports: [HomeModule],
+  exports: [AppModule],
   controllers: [],
   providers: [],
 })
